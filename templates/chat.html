@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чат</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <span>Вы: {{ username }}</span>
+            <img id="my-avatar" src="/static/default-avatar.png" alt="avatar" class="avatar" style="width:36px;height:36px;border-radius:50%;object-fit:cover;vertical-align:middle;">
+            <form id="avatar-form" enctype="multipart/form-data" style="display:inline-block;">
+                <input type="file" id="avatar-input" name="avatar" accept="image/*" style="display:none;">
+                <button type="button" id="avatar-btn" title="Загрузить фото">📷</button>
+            </form>
+            <a href="/" class="logout">Выйти</a>
+        </div>
+        <div id="messages" class="chat-messages"></div>
+        <form id="message-form">
+            <input type="text" id="message-input" placeholder="Сообщение..." autocomplete="off" required>
+            <button type="submit">Отправить</button>
+        </form>
+        <form id="file-form" enctype="multipart/form-data">
+            <input type="file" id="file-input" name="file" accept="image/*,video/*,application/pdf,.doc,.docx,.txt">
+            <button type="submit">Отправить файл</button>
+        </form>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html> 
